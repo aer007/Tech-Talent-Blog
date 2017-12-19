@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TechTalentBlog</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div id= "head-container">
+    <div class="top-nav">
+
+</div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="wrapper">
+      <header>
+        <div class="header-main">
+          <h1 class="title"><a href="/posts#index">Amandrew's Kitchen</a></h1>
+
+        </div>
+
+          <ul class="nav-header">
+            <li><a href="/posts/new">Add Post</a></li>
+            <li><a href="/posts#index">Posts</a></li>
+            <li><a href="">Random</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    </div>
+  </div>
+  <%= yield %>
+</div>
+
+<footer>
+  <div class="footer">
+    <div class="row">
+      <div class="col - 4"><% if user_signed_in? %>
+        Signed in as <%=current_user.email %>
+        <%= image_tag (current_user.avatar.url(:thumb)) if current_user.avatar.url%></div>
+        <div class="col - 4"><%= link_to "Edit Profile", edit_user_registration_path, class: "form-control btn btn-default"%></div>
+        <div class = "col - 4"><%= button_to "Logout", destroy_user_session_path, :method => :delete, class:"form-control btn btn-default" %></div>
+        <% end %>
+
+      </div>
+  </div>
+
+</footer>
+
+
+</body>
+</html>

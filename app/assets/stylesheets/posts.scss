@@ -1,0 +1,39 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  text-align: center;
+  color: black;
+
+}
+#login {
+  text-align: center;
+  position: relative;
+   margin: 0 auto;
+   background: #ecf0f1;
+   width: 350px;
+   border-radius: 5px;
+   box-shadow: 3px 3px 10px #333;
+   padding: 15px;
+}
+#logintext {
+  text-align: center;
+      font-weight: 200;
+      font-size: 2em;
+      margin-top: 10px;
+      color: #34495e;
+}
+.top-nav {
+  display: block;
+  float: right;
+  background-color: green;
+  width: 10%;
+  height: 50%;
+}
+
+.footer {
+  float: right;
+}
+.newpost {
+  text-align: center;
+}

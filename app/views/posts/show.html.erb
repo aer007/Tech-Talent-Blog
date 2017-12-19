@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <% if user_signed_in? %>
+  <%= image_tag (current_user.avatar.url(:thumb)) if current_user.avatar.url%><%end%><%= @post.user.username %>
+</p>
+
+<p>
+  <strong>Blog entry:</strong>
+  <%= @post.blog_entry %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<%@post.comments.each do |comment| %>
+  <div class="well">
+    Author: <%= comment.author %>
+    <br />Entry: <%= comment.comment_entry %>
+  </div>
+  <% end %>
+<%= render 'comments/form', post: @post, comment: @comment %>

@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "./*"; /* or use import "posts" */
+
+
+body {
+  background-color: white;
+  font-family: 'gotham',helvetica;
+}
+
+.title {
+  font-family: 'gotham',helvetica;
+  text-align: center;
+  font-size: 60px;
+  font-weight: lighter;
+  position: relative;
+  margin: 60px 0 20px;
+  webkit-background-clip: text;
+  moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+
+}
+.nav-header {
+  padding: 0;
+  margin: 0 0 40px;
+  text-align: center;
+  position: relative;
+  list-style: none;
+  display:block
+}
+li {
+  display: inline-block;
+  padding: 20px 40px;
+  position: relative;
+  font-family: 'domaine',serif;
+  font-size: 22px;
+}
+
+a:link{
+  color: black;
+}
+a:visited{
+  color: black;
+}
+.wrapper {
+  text-align: center;
+  background-color: #d3d3d3;
+  width: 100%;
+  padding: 30px;
+  margin-top:0px;
+}
+h1 {
+  font-family: 'domaine',serif;
+}

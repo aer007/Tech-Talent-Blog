@@ -1,0 +1,31 @@
+
+<h1 style="text-align:center">Posts <%= @user.username if @user %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Blog entry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= link_to post.user.username, user_posts_path(username: post.user.username) %></td>
+        <td><%= post.blog_entry %></td>
+        <td><%= link_to 'Show', post, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', post, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+<%= paginate @posts %>
+
+<%= link_to 'New Post', new_post_path, class:"btn btn-default form-control"%>
